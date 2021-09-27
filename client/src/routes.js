@@ -1,40 +1,36 @@
-import Admin from "./page/Admin"
-import Basket from "./page/Basket"
-import Shop from "./page/shop"
-import Auth from "./page/Auth"
-import Device from "./page/DevicePage"
-import { ADMIN_ROUTE, BASKET_ROUTE, DEVICE_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from "./utils/const"
+import Admin from "./pages/Admin";
+import {ADMIN_ROUTE, BASKET_ROUTE, DEVICE_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE} from "./utils/consts";
+import Basket from "./pages/Basket";
+import Shop from "./pages/Shop";
+import Auth from "./pages/Auth";
+import DevicePage from "./pages/DevicePage";
 
 export const authRoutes = [
     {
         path: ADMIN_ROUTE,
-        component: Admin
+        Component: Admin
     },
-
     {
         path: BASKET_ROUTE,
-        component: Basket
-    }
+        Component: Basket
+    },
 ]
 
 export const publicRoutes = [
     {
         path: SHOP_ROUTE,
-        component: Shop 
+        Component: Shop
     },
-
-    {
-        path: REGISTRATION_ROUTE,
-        component: Auth
-    },
-
     {
         path: LOGIN_ROUTE,
-        component: Auth
+        Component: Auth
     },
-
+    {
+        path: REGISTRATION_ROUTE,
+        Component: Auth
+    },
     {
         path: DEVICE_ROUTE + '/:id',
-        component: Device
+        Component: DevicePage
     },
 ]

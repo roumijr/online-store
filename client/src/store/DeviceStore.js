@@ -5,7 +5,9 @@ export default class DeviceStore{
     constructor() {
         this._types = [
             { id: 1, name: 'холодильники' },
-            {id: 2, name: 'Смартфоны'},
+            { id: 2, name: 'Смартфоны' },
+            { id: 3, name: 'Ноутбуки' },
+            {id:4, name: 'Телевизоры'},
         ]
         this._brands = [
             { id: 1, name: 'sumsung' },
@@ -18,6 +20,10 @@ export default class DeviceStore{
             { id: 4, name: 'iphone 12 pro', price: 25000, rating: 5, img: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwincar.ie%2Fwp-content%2Fuploads%2F2020%2F10%2FIPHONE12.jpg&f=1&nofb=1' },
             
         ]
+
+        this._selectedBrand = {}
+        this._selectedType = {}
+        
         makeAutoObservable(this)
     }
 
@@ -33,6 +39,14 @@ export default class DeviceStore{
         this._devices = devices
     }
 
+    setSelectedType(type) {
+        this._selectedType = type
+    }
+
+    setSelectedBrand(brand) {
+        this._selectedBrand = brand
+    }
+
     get types() {
         return this._types
     }
@@ -43,5 +57,13 @@ export default class DeviceStore{
 
     get devices() {
         return this._devices
+    }
+
+    get selectedType() {
+        return this._selectedType
+    }
+
+    get selectedBrand() {
+        return this._selectedBrand
     }
 }

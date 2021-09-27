@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import {Button} from 'react-bootstrap'
 import { NavLink } from "react-router-dom";
-import { SHOP_ROUTE } from "../utils/const";
+import { SHOP_ROUTE } from "../utils/consts";
 import { observer } from 'mobx-react-lite';
 
 
@@ -24,7 +24,7 @@ const NavBar = observer(() => {
                         </Nav>
                         :
                         <Nav className="ml-auto" style={{ color: 'white' }}>
-                            <Button variant={'outline-light'} onClick= {()=> user.setIsAuth(true)}>Авторизация</Button>
+                            <Button variant={'outline-light'} onClick= {()=> user.setIsAuth(false)}>Авторизация</Button>
                         </Nav>
                     }
                 </Container>
